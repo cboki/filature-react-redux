@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-4">
+      <h1>Nouvelle partie</h1>
+      <p>Pour créer une nouvelle partie, entrez un nom d'équipe puis cliquez sur "Créer une nouvelle partie".</p>
+      <%= simple_form_for @game do |f| %>
+        <%= f.input :name %>
+        <%= f.submit "Créer une nouvelle partie", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-4">
+      <h1>Nouvel agent</h1>
+      <p>Pour créer un nouvel agent, renseignez vos informations puis cliquez sur "Engagé !".</p>
+      <%= simple_form_for [@game, @player] do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+        <%= f.input :nickname %>
+        <%= f.submit "Engagé !", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

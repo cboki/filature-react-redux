@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-4">
+      <h1>Coéquipiers</h1>
+      <ol>
+        <% @players.each do |player| %>
+          <li><%= player.nickname %></li>
+        <% end %>
+      </ol>
+      <p>Pour ajouter un nouveau membre à l'équipe, cliquez sur "Nouvel agent".</p>
+      <%= link_to 'Nouvel agent', new_game_player_path(@game), class: "btn btn-primary"  %>
+    </div>
+  </div>
+</div>
