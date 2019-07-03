@@ -27,9 +27,9 @@ class Map extends Component {
     console.log(PointerEvent.lngLat);
   }
 
-  componentDidMount = () => {
-    setInterval(this.props.fetchPosition, 10000);
-  }
+  // componentDidMount = () => {
+  //   setInterval(this.props.fetchPosition, 10000);
+  // }
 
   render() {
     return (
