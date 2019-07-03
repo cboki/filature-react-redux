@@ -5,23 +5,29 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import { createHistory as history } from 'history';
 
 // internal modules
 import App from './components/app';
-import '../assets/stylesheets/application.scss';
+
+import positionReducer from './reducers/position_reducer';
 
 // State and reducers
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
-});
+  position: positionReducer
+})
+
+const initialState = {
+  position: {
+    latitude: 47.08259,
+    longitude: 2.39638
+  }
+}
 
 const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root')

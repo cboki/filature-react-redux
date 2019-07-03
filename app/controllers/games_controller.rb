@@ -8,6 +8,9 @@ class GamesController < ApplicationController
     redirect_to game_players_path(@game)
   end
 
+  def show
+  end
+
   private
 
   def game_params
