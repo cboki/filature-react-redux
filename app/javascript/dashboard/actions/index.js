@@ -1,9 +1,11 @@
+export const FETCH_POSITION = 'FETCH_POSITION';
+
 export function fetchPosition() {
-  const promise = fetch('https://api.wheretheiss.at/v1/satellites/25544')
+  const promise = fetch('/api/v1/games/1/positions/random')
     .then(response => response.json());
 
   return {
-    type: 'FETCH_POSITION',
+    type: FETCH_POSITION,
     payload: promise
   }
 }

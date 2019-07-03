@@ -5,4 +5,18 @@ Rails.application.routes.draw do
   resources :games, only: [:new, :create, :show] do
     resources :players, only: [:index, :new, :create]
   end
+
+  #API routing
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :games, only: [] do
+        resources :positions, only: [ :index ] do
+          collection do
+            get 'last'
+            get 'random'
+          end
+        end
+      end
+    end
+  end
 end

@@ -23,29 +23,20 @@ class Map extends Component {
     });
   }
 
+  onClick = (PointerEvent) => {
+    console.log(PointerEvent.lngLat);
+  }
+
   componentDidMount = () => {
     setInterval(this.props.fetchPosition, 10000);
   }
-
-  // fetchPosition = () => {
-  //   fetch('https://api.wheretheiss.at/v1/satellites/25544')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({
-  //         position: {
-  //           latitude: data.latitude,
-  //           longitude: data.latitude
-  //         }
-  //       });
-  //       console.log(data)
-  //     });
-  // }
 
   render() {
     return (
       <ReactMapGL
         {...this.state.viewport}
         onViewportChange={this.onViewportChange}
+        onClick={this.onClick}
         mapboxApiAccessToken={'pk.eyJ1IjoiY2Jva2kiLCJhIjoiY2p4ZWlmdDI0MGw0eTNwbno3OW5tcjF5YyJ9.Vd4lLeizSBl6Rg1YyQu7Qw'}
        >
         <Marker latitude={this.props.position.latitude} longitude={this.props.position.longitude} >
