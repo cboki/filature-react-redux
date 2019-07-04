@@ -1,27 +1,57 @@
 .parent {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  display: flex;
+  height: 100vh;
+}
+
+.logo-container {
+  padding: 10px;
+  width: 60px;
+  height: 100%;
+  background-color: #dbdbdb;
+}
+
+.first-container {
+  padding: 20px;
+  width: 60%;
+  height: 100%;
 }
 
 .map {
-  grid-area: 1 / 1 / 4 / 4;
+  width: 100%;
+  height: 80%;
+}
+
+.second-container {
+  height: 100%;
+  width: auto;
 }
 
 .chrono {
-  grid-area: 1 / 4 / 2 / 6;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.div3 {
-  grid-area: 2 / 4 / 3 / 6;
+.chrono-number {
+  font-size: 60px;
+  font-weight: bold;
+  color: #3f3f3f;
 }
 
-.div4 {
-  grid-area: 3 / 4 / 5 / 6;
+.score {
+  height: 20%;
 }
 
-.div5 {
-  grid-area: 4 / 1 / 5 / 4;
+.missions {
+  height: 55%;
+}
+
+.mission-list{
+  height: 90%;
+  overflow: scroll;
+}
+
+.mission {
+  padding: 10px 10px;
 }

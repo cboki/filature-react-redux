@@ -18,12 +18,15 @@ class MissionList extends Component {
 
   render() {
     return (
-      <div>
-        {
-          this.props.missions.map((mission) => {
-            return <Mission key={mission.id} mission={mission} />
-          })
-        }
+      <div className="missions">
+      <h3 className="mission-title">Missions</h3>
+        <div className="mission-list">
+          {
+            this.props.missions.map((mission) => {
+              return <Mission key={mission.id} mission={mission} />
+            })
+          }
+        </div>
       </div>
     );
   }

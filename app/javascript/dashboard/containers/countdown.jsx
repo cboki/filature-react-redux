@@ -62,8 +62,7 @@ class Countdown extends Component {
   render() {
     return(
       <div className="chrono">
-        <div className="min">{this.addLeadingZeros(this.state.min)} min</div>
-        <div className="sec">{this.addLeadingZeros(this.state.sec)} sec</div>
+        <div className="chrono-number">{this.addLeadingZeros(this.state.min)}:{this.addLeadingZeros(this.state.sec)}</div>
       </div>
     )
   }
