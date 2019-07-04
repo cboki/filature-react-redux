@@ -24,11 +24,15 @@ class Map extends Component {
   }
 
   componentDidMount = () => {
-    setInterval(this.locate, 10000);
+    this.refresher = setInterval(this.locate, 60000);
   }
 
   locate = () => {
     this.props.fetchPosition(this.props.game.id);
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.refresher);
   }
 
   render() {

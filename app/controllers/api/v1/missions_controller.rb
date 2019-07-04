@@ -1,4 +1,4 @@
-class Api::V1::PositionsController < ActionController::Base
+class Api::V1::MissionsController < ActionController::Base
   def index
     @missions = Mission.all
     render json: @missions

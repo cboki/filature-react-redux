@@ -9,16 +9,19 @@ import reduxPromise from 'redux-promise';
 // internal modules
 import App from './components/app';
 
-import positionReducer from './reducers/position_reducer';
+import positionsReducer from './reducers/positions_reducer';
+import missionsReducer from './reducers/missions_reducer';
 
 // State and reducers
 const reducers = combineReducers({
   game: (state = null, action) => state,
-  position: positionReducer
+  missions: missionsReducer,
+  position: positionsReducer
 })
 
 const initialState = {
   game: JSON.parse(root.dataset.game),
+  missions: [{id: 1, name: ""}],
   position: {
     latitude: 47.08259,
     longitude: 2.39638
