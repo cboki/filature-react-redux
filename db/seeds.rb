@@ -21,3 +21,18 @@ game = Game.create!(name: "test")
     game: game
   )
 end
+
+puts "#{Position.count} positions créées"
+
+MISSIONS = ['Photographier la cible', 'Identification de la cible sur la photo par le maitre du jeu',
+'Agent K identifie la cible sur la photographie', 'Récuperer un objet appartenant à la cible',
+'Installer un dispositif spécial sur la cible', 'Réperer la cible sur le terrain', 'Trouver un indice sur le terrain',
+'Enregistrer une vidéo de la cible', 'Enregistrer une vidéo de la cible identifiable', 'Enregistrer la voix de la cible',
+'Transmettre 40 géopositions de la cible']
+
+MISSIONS.each do |mission|
+  Mission.create!(name: mission)
+end
+
+puts "#{Mission.count} missions créées"
+

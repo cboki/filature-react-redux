@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class Countdown extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class Countdown extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      const timeLeft = this.calculateCountdown(this.props.startDate);
+      const timeLeft = this.calculateCountdown(this.props.game.start_time);
       timeLeft ? this.setState(timeLeft) : this.stop();
     }, 1000);
   }
@@ -59,7 +61,7 @@ class Countdown extends Component {
 
   render() {
     return(
-      <div>
+      <div className="chrono">
         <div className="min">{this.addLeadingZeros(this.state.min)} min</div>
         <div className="sec">{this.addLeadingZeros(this.state.sec)} sec</div>
       </div>
@@ -67,4 +69,10 @@ class Countdown extends Component {
   }
 }
 
-export default Countdown;
+function mapStateToProps(state) {
+  return {
+    game: state.game,
+  };
+}
+
+export default connect(mapStateToProps, null)(Countdown);

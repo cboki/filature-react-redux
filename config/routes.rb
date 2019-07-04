@@ -17,6 +17,7 @@ Rails.application.routes.draw do
           end
         end
       end
+      resources :missions, only: [:index]
     end
   end
 end

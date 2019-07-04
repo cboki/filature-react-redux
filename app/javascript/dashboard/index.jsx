@@ -13,10 +13,12 @@ import positionReducer from './reducers/position_reducer';
 
 // State and reducers
 const reducers = combineReducers({
+  game: (state = null, action) => state,
   position: positionReducer
 })
 
 const initialState = {
+  game: JSON.parse(root.dataset.game),
   position: {
     latitude: 47.08259,
     longitude: 2.39638
